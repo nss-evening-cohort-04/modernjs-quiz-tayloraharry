@@ -21,26 +21,36 @@ var Heavyweight = function() {
 };
 Heavyweight.prototype = new Robot();
 
+
 /*Featherweight robots*/
 var ToasterBot = function() {
     this.weapon = "toasterfire";
     this.weaponDamage = 150;
     this.healthBonus = 25;
 };
-Featherweight.prototype = new Robot();
+ToasterBot.prototype = new Featherweight();
 
 var LunchboxBot = function() {
     this.weapon = "lunchfire";
     this.weaponDamage = 100;
     this.healthBonus = 50;
 };
-Featherweight.prototype = new Robot();
+LunchboxBot.prototype = new Featherweight();
 
-var newToaster = new ToasterBot();
+/*MiddleWeight robots*/
+var TrashcanBot = function() {
+    this.weapon = "trashfire";
+    this.weaponDamage = 100;
+    this.healthBonus = 50;
+};
+TrashcanBot.prototype = new Middleweight();
 
-
-
-
+var MicrowaveBot = function() {
+    this.weapon = "microwaveFire";
+    this.weaponDamage = 10;
+    this.healthBonus = 125;
+};
+MicrowaveBot.prototype = new Middleweight();
 
 
 
