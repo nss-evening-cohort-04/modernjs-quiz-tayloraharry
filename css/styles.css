@@ -1,0 +1,22 @@
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.battlecard {
+  border: 1px solid black;
+  height: 20em;
+
+}
+
+img {
+  width: 50%;
+  height: 50%;
+}

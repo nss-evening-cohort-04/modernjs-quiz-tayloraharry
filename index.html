@@ -1,11 +1,135 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Modern JS Quiz</title>
-</head>
-<body>
-<h1>Hello</h1>
-
-<script type="text/javascript" src="javascripts/Robot.js"></script>
-</body>
-</html>
+ <html>
+ <head>
+     <title>Robot BattleDome</title>
+     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <link rel="stylesheet" type="text/css" href="css/styles.css">
+ </head>
+ <body>
+<div class="jumbotron text-center"><h1>Robot BattleDome</h1></div>
+<div id="players-setup" class="col-sm-offset-4">
+<div id="player-one" class="col-md-3">
+    <input id="player-one-nm" type="text" class="form-control player-names" placeholder="Player One Name"/>
+    <button id="player-one-sub-nm" type="button" class="choose-nm-btn btn danger disabled btn-block btn-danger">Submit Name</button>
+    <div id="player-one-types" class="hidden">
+    <select class="player-types form-control" id="player-one-types-select">
+      <option>Select your robot...</option>
+      <option>Drone</option>
+      <option>Bipedal</option>
+      <option>ATV</option>
+    </select>
+    <button id="player-one-sub-tp" type="button" class="choose-type-btn btn danger disabled btn-block btn-info">Submit Type</button>
+    </div>
+    <div id="player-one-drone" class="hidden">
+    <select class="player-model form-control" id="player-one-drone-select">
+      <option>Select your drone...</option>
+      <option>Drone1</option>
+      <option>Drone2</option>
+    </select>
+    <button id="player-one-sub-mod" type="button" class="choose-mod-btn btn danger disabled btn-block btn-info">Submit Model</button>
+    </div>
+    <div id="player-one-bipedal" class="hidden">
+    <select class="player-model form-control" id="player-one-bipedal-select">
+      <option>Select your bipedal...</option>
+      <option>Bipedal1</option>
+      <option>Bipedal2</option>
+    </select>
+    <button id="player-one-sub-mod" type="button" class="choose-mod-btn btn danger disabled btn-block btn-info">Submit Model</button>
+    </div>
+    <div id="player-one-atv" class="hidden">
+    <select class="player-model form-control" id="player-one-atv-select">
+      <option>Select your ATV...</option>
+      <option>ATV1</option>
+      <option>ATV2</option>
+    </select>
+    <button id="player-one-sub-mod" type="button" class="choose-mod-btn btn danger disabled btn-block btn-info">Submit Model</button>
+    </div>
+    <div id="player-one-weapons" class="hidden">
+    <select class="player-weapons form-control" id="player-one-weapons-select">
+      <option>Select your weapon...</option>
+      <option>Sawblade</option>
+      <option>Flamethrower</option>
+      <option>Laser</option>
+    </select>
+    <button id="player-one-ready" type="button" class="player-ready-btn btn danger disabled btn-block btn-danger">Ready!</button>
+    </div>
+</div>
+<div id="player-two" class="col-md-3">
+    <input id="player-two-nm" type="text" class="form-control player-names" placeholder="Player Two Name"/>
+    <button id="player-two-sub-nm" type="button" class="choose-nm-btn btn danger disabled btn-block btn-danger">Submit Name</button>
+    <div id="player-two-types" class="hidden">
+    <select class="player-types form-control" id="player-two-types-select">
+      <option>Select your robot...</option>
+      <option>Drone</option>
+      <option>Bipedal</option>
+      <option>ATV</option>
+    </select>
+    <button id="player-two-sub-tp" type="button" class="choose-type-btn btn danger disabled btn-block btn-info">Submit Type</button>
+    </div>
+    <div id="player-two-drone" class="hidden">
+    <select class="player-model form-control" id="player-two-drone-select">
+      <option>Select your drone...</option>
+      <option>Drone1</option>
+      <option>Drone2</option>
+    </select>
+    <button id="player-two-sub-mod" type="button" class="choose-mod-btn btn danger disabled btn-block btn-info">Submit Model</button>
+    </div>
+    <div id="player-two-bipedal" class="hidden">
+    <select class="player-model form-control" id="player-two-bipedal-select">
+      <option>Select your bipedal...</option>
+      <option>Bipedal1</option>
+      <option>Bipedal2</option>
+    </select>
+    <button id="player-two-sub-mod" type="button" class="choose-mod-btn btn danger disabled btn-block btn-info">Submit Model</button>
+    </div>
+    <div id="player-two-atv" class="hidden">
+    <select class="player-model form-control" id="player-two-atv-select">
+      <option>Select your atv...</option>
+      <option>ATV1</option>
+      <option>ATV2</option>
+    </select>
+    <button id="player-two-sub-mod" type="button" class="choose-mod-btn btn danger disabled btn-block btn-info">Submit Model</button>
+    </div>
+    <div id="player-two-weapons" class="hidden">
+    <select class="player-weapons form-control" id="player-two-weapons-select">
+      <option>Select your weapon...</option>
+      <option>Sawblade</option>
+      <option>Flamethrower</option>
+      <option>Laser</option>
+    </select>
+    <button id="player-two-ready" type="button" class="player-ready-btn btn danger disabled btn-block btn-danger">Ready!</button>
+    </div>
+</div>
+</div>
+<div id=battleground class="col-lg-12 hidden">
+<h1 class="col-lg-12 text-center">FIGHT!</h1>
+<div class="col-md-2"></div>
+<div id="player-one-battle" class="col-md-4 battlecard">
+<div id="player-one-battle-name"></div>
+<div id="player-one-battle-health"></div>
+<div id="player-one-battle-robot"></div>
+<div id="player-one-battle-model"></div>
+<div id="player-one-battle-weapon"></div>
+</div>
+<div id="player-two-battle" class="col-md-4 battlecard">
+<div id="player-two-battle-name"></div>
+<div id="player-two-battle-health"></div>
+<div id="player-two-battle-robot"></div>
+<div id="player-two-battle-model"></div>
+<div id="player-two-battle-weapon"></div>
+</div>
+<button id="attack-btn" type="button" class="player-ready-btn btn danger btn-block btn-success">Attack!</button>
+</div>
+<div id="winner" class="col-lg-12 hidden">
+  <h1 id="winner-text" class="text-center"></h1>
+  <button id="play-again-btn" type="button" class="player-ready-btn btn danger btn-block btn-success">Play again!</button>
+</div>
+</div>
+     <script src="/lib/bower_components/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+     <script src="/javascripts/robots.js" type="text/javascript" ></script>
+     <script src="/javascripts/robotWeapons.js" type="text/javascript"></script>
+     <script src="/javascripts/robotTypes.js" type="text/javascript" ></script>
+     <script src="/javascripts/app.js" type="text/javascript" charset="utf-8"></script>
+ </body>
+ </html>
