@@ -153,13 +153,13 @@ let PlayerTwo = new Robot.Combatants.Bot();
 function  playerOneDied() {
     $("#battleground").hide();
     $("#winner").removeClass("hidden");
-    $("#winner-text").html("Player two defeated player one with the " + PlayerTwo.weapon.name + "!");
+    $("#winner-text").html(PlayerTwo.playerName + " defeated " + PlayerOne.playerName + " with the " + PlayerTwo.weapon.name + "!");
 }
 
 function  playerTwoDied() {
     $("#battleground").hide();
     $("#winner").removeClass("hidden");
-    $("#winner-text").html("Player one defeated player one with the " + PlayerOne.weapon.name + "!");
+    $("#winner-text").html(PlayerOne.playerName + " defeated " + PlayerTwo.playerName + " with the " + PlayerOne.weapon.name + "!");
 }
 
 $("#play-again-btn").click(function() {
