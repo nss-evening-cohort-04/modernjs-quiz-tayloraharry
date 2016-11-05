@@ -95,7 +95,7 @@ let PlayerTwo = new Robot.Combatants.Bot();
           $("#player-two-weapons").removeClass("hidden");
          }
       }
-    })
+    });
 
     $('.player-ready-btn').click(function() {
       if (!$(this).hasClass("disabled")) {
@@ -163,8 +163,8 @@ function  playerTwoDied() {
 }
 
 $("#play-again-btn").click(function() {
-  window.location.reload()
-})
+  window.location.reload();
+});
 
 
 });

@@ -1,3 +1,5 @@
+"use strict";
+
 var Robot = (function (robotWeapons) {
 
 

@@ -1,3 +1,5 @@
+"use strict";
+
 var Robot = (function(robots) {
 /*
   TODO: Modularize this code with IIFE or Browserify

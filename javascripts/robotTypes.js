@@ -1,11 +1,12 @@
-var Robot = (function (robotTypes) {
+"use strict";
 
+var Robot = (function (robotTypes) {
 
 robotTypes.Types = {};
 
 robotTypes.Types.Type = function() {
   this.name = "no-type";
-}
+};
 
 robotTypes.Types.Drone = function() {
   this.name = "drone";
